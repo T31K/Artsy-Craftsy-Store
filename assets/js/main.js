@@ -813,7 +813,8 @@
     });
 
     /*--
-        Ajax Contact Form
+
+    /*--    Ajax Contact Form
     -----------------------------------*/
     $(function () {
         // Get the form.
@@ -865,4 +866,25 @@
         subMenuMegaMenuAlignment();
     });
 
+
+    // jQuery Confirmation
+    $(".btn-confirm").confirm({
+        title: 'Confirm submission?',
+        content: 'Simple confirm!',
+        buttons: {
+            confirm: {
+                text: 'Confirm',
+                btnClass: 'btn-red',
+                keys: ['enter', 'shift'],
+                action: function(){
+                    $.alert('Something else?');
+                }
+            },
+            cancel: {
+                text: 'Cancel',
+                btnClass: 'btn-default',
+                keys: ['enter', 'shift'],
+            },
+        }
+    });
 })(jQuery);
